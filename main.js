@@ -16,5 +16,6 @@ function foo (){
   dir.remFile(file2);
   dir.remDir(dir1);
   dir.remDir(dir2);
+  console.log('Merge with parent branch');
 }
 foo();
