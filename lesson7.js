@@ -10,9 +10,19 @@ let array4 = array1.sort().reverse();
 console.log(array4);
 
 // найти максимальное значение числа в массиве ([3,67,15...])
-let array5 = [3,67,15];
+let array5 = [3,67,15,202];
+
+function compareValues(a, b) {
+    if (a > b) return 1;
+    if (a == b) return 0;
+    if (a < b) return -1;
+}
+let temp = array5.sort(compareValues);
+console.log('Way 1: Max value is ' + temp[temp.length-1]);
+
+//another way to get Max value
 let arrayMax = Math.max(...array5);
-console.log(arrayMax);
+console.log('Way 2: Max value is ' + arrayMax);
 
 // записать в массив ряд фибаначи начиная с N члена с длинной массива M
 let arr = [];
@@ -38,7 +48,7 @@ let arUnique = array7.filter(getUnique);
 console.log(arUnique);
 
 // даны 2 4-хзначных числа с неповторяющимися цифрами, надо определить сколько цифр в этих числах совпадают по значению и позиции и сколько только по значению 
-//(3487 и 3794 ---> 1 и 2 ) 
+//(3487 и 3794) 
 
 let str1 = '3487';
 let str2 = '3794';
@@ -46,17 +56,17 @@ let str2 = '3794';
 let a = str1.split('');
 let b = str2.split('');
 let match = 0;
-let exectCount = 0;
+let exectMatch = 0;
 
-let result = a.length === b.length && a.every(function(element){
-    return b.includes(element);
+a.forEach(function(element, index){
+    if (b.includes(element)) {
+        match++;
+    }
+    if (element === b[index]){
+        exectMatch++;
+    }
 })
-
-console.log(result);
-
-// let c = a.length === b.length && a.every(function(element,index){
-//     return element === b[index];
-// })
-// console.log(c);
-
+console.log('Match by value - '+ match);
+console.log('Full Match - '+ exectMatch);
+console.log('Match by value excluding cases(s) with Full Match - '+ (match - exectMatch));
 
