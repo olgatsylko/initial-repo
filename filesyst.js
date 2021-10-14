@@ -18,7 +18,7 @@ function crFile (file){
   console.log('File is created');
   })
 }
-async function moveFile(dir1, dir2){
+function moveFile(dir1, dir2){
   fs.move(dir1, dir2, err => {
   if (err) return console.error('Error message 4 ' + err)
   console.log('Moved!')
