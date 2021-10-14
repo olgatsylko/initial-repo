@@ -5,7 +5,6 @@ function crDir (dir){
     console.log('Error message ' + err);
     console.log('Dir is created');
   })
-  
 }
 function remDir (dir){
   fs.remove(dir, err => {
@@ -18,7 +17,6 @@ function crFile (file){
   console.log('Error message 3 ' + err);
   console.log('File is created');
   })
-  
 }
 async function moveFile(dir1, dir2){
   fs.move(dir1, dir2, err => {
